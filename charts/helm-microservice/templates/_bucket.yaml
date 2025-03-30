@@ -1,0 +1,25 @@
+{{- define "bucket" -}}
+{{- $root:= . }}
+{{- if .Values.buckets }}
+{{- range $key, $value := .Values.buckets }}
+---
+apiVersion: fn-demo.crossplane.io/v1alpha1
+kind: Bucket
+metadata:
+  name: {{ $root.Release.Name }}-{{ $value }}
+  {{- if $root.Values.annotations }}
+  annotations:
+  {{- range $key, $value := $root.Values.annotations }}
+    {{ $key }}: {{ $value }}
+  {{- end }}
+  {{- end }}
+  labels:
+    app.kubernetes.io/name: {{ include "microservice.name" $root }}
+    helm.sh/chart: {{ include "microservice.chart" $root }}
+    app.kubernetes.io/instance: {{ $root.Release.Name }}
+    app.kubernetes.io/managed-by: {{ $root.Release.Service }}
+spec:
+ name: {{ $root.Release.Name }}-{{ $value }}
+{{- end }}
+{{- end }}
+{{- end }}

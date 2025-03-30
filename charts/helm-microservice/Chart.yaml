@@ -1,0 +1,12 @@
+---
+apiVersion: v2
+name: microservice
+version: 0.0.1
+appVersion: 0.0.1
+description: A Helm chart which provide a DRY microservice deployment mechanism
+keywords:
+  - microservice
+source:
+  - https://github.com/bwehrle/helm-microservice-crossplane
+maintainers:
+  - name: bwehrle

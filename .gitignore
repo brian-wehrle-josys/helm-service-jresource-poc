@@ -1,0 +1,6 @@
+*.tgz
+
+# Helm Charts dependencies
+*.lock
+
+.idea
