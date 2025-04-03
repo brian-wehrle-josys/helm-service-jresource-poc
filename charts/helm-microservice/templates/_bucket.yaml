@@ -7,7 +7,7 @@ apiVersion: fn-demo.crossplane.io/v1alpha1
 kind: JBucket
 metadata:
   name: {{ $root.Release.Name }}-{{ $value }}
-  namespace: {{ .Release.Namespace }}
+  namespace: {{ $root.Release.Namespace }}
   {{- if $root.Values.annotations }}
   annotations:
   {{- range $key, $value := $root.Values.annotations }}
