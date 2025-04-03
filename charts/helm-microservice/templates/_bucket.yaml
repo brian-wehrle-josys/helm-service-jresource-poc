@@ -21,6 +21,7 @@ metadata:
     app.kubernetes.io/managed-by: {{ $root.Release.Service }}
 spec:
  name: {{ $root.Release.Name }}-{{ $value }}
+ region: {{ $root.Values.region }}
 {{- end }}
 {{- end }}
 {{- end }}

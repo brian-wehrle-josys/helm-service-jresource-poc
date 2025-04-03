@@ -25,7 +25,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: jresource-app
-  namespace: jresource
+  namespace: jresources
   annotations:
     foo-annotation: bar
   labels:
@@ -78,7 +78,7 @@ apiVersion: fn-demo.crossplane.io/v1alpha1
 kind: JBucket
 metadata:
   name: jresource-app-bucket-name
-  namespace: jresource
+  namespace: jresources
   annotations:
     foo-annotation: bar
   labels:
@@ -88,3 +88,4 @@ metadata:
     app.kubernetes.io/managed-by: Helm
 spec:
  name: jresource-app-bucket-name
+ region: ap-south-1
