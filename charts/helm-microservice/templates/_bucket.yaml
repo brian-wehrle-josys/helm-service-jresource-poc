@@ -4,9 +4,10 @@
 {{- range $key, $value := .Values.buckets }}
 ---
 apiVersion: fn-demo.crossplane.io/v1alpha1
-kind: Bucket
+kind: JBucket
 metadata:
   name: {{ $root.Release.Name }}-{{ $value }}
+  namespace: {{ .Release.Namespace }}
   {{- if $root.Values.annotations }}
   annotations:
   {{- range $key, $value := $root.Values.annotations }}
