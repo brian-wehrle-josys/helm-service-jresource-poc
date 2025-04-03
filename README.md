@@ -36,3 +36,4 @@ See [examples.md](examples.md) for how to use the Chart and deploy a sample serv
 ## License
 
 [Apache License 2.0](/LICENSE)
+# helm-service-jresource-poc
