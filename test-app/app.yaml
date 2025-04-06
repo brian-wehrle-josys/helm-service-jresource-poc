@@ -1,4 +1,13 @@
 ---
+# Source: microservice/templates/service-account.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: default
+  namespace: default
+imagePullSecrets:
+  - name: dockerhub-image-pull-secret
+---
 # Source: microservice/templates/service.yaml
 apiVersion: v1
 kind: Service
@@ -80,6 +89,7 @@ metadata:
   name: jresource-app-bucket-name
   namespace: jresources
   annotations:
+    argocd.argoproj.io/sync-wave: "-1" # Sync jresource before service resources
     foo-annotation: bar
   labels:
     app.kubernetes.io/name: httpbin

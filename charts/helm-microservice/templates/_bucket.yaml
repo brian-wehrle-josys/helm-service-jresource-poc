@@ -10,6 +10,7 @@ metadata:
   namespace: {{ $root.Release.Namespace }}
   {{- if $root.Values.annotations }}
   annotations:
+    argocd.argoproj.io/sync-wave: "-1" # Sync jresource before service resources
   {{- range $key, $value := $root.Values.annotations }}
     {{ $key }}: {{ $value }}
   {{- end }}

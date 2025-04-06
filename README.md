@@ -33,6 +33,12 @@ For other configurations, please see the [example values](example-httpbin-values
 
 See [examples.md](examples.md) for how to use the Chart and deploy a sample service.
 
+## Render test-app
+
+```sh
+sh ./render.sh <region>
+```
+
 ## License
 
 [Apache License 2.0](/LICENSE)
